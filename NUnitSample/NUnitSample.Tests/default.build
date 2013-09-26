@@ -23,7 +23,7 @@
 
   <target name="test" depends="build">
     <nunit2 failonerror="false">
-      <formatter type="Xml" usefile="true" extension=".xml" outputdir="..\..\qhode\testresults" />
+      <formatter type="Xml" usefile="true" extension=".xml" outputdir="..\..\shippable\testresults" />
       <test assemblyname="..\build\NUnitSample.Tests.dll" appconfig="nunit.config" >
         <references>
           <include name="..\build-dependencies\nunit.framework.dll"/>
