@@ -5,4 +5,4 @@ before_install: nant build test coverage -f:.\NUnitSample\NUnitSample.Tests\defa
 language: csharp
 notifications:
   email: false
-  campfire: shippable:6c9f530a2f97fe5b093ed5f81cbb39ef6f0c80fa@574360
+  campfire: shippable:6c9f530a2f97fe5b093ed5f81cbb39ef6f0c80fa@575797
