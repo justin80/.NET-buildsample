@@ -7,7 +7,7 @@ notifications:
   email: false
   campfire:
     rooms:
-      - shippable:6c9f530a2f97fe5b093ed5f81cbb39ef6f0c80fa@575797
+      - shippable:1796c91e312c6383e6e2a348849881da56bcde00@575797
     template:
       - "%{repository} (%{commit}) : %{message}"
       - "Build details: %{build_url}"
