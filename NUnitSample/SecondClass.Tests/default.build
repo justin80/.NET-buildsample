@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://nant.sf.net/release/0.92/nant.xsd" name="Foo" default="build">
+  <target name="build">
+    <nant buildfile="..\NUnitSample\default.build" target="build" failonerror="true">
+      
+    </nant>
+    <csc target="library" output="..\build\SecondClass.Tests.dll" debug="Full">
+      <references>
+        <include name="..\build\NUnitSample.dll" />
+        <include name="..\build-dependencies\nunit.framework.dll"/>
+      </references>
+      <sources>
+        <include name="**/*.cs"/>
+      </sources>
+    </csc>
+    <copy todir="..\build\">
+      <fileset>
+        <include name="..\build\NUnitSample.dll" />
+        <include name="..\build-dependencies\nunit.framework.dll"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="test" depends="build">
+    <nunit2 failonerror="false">
+      <formatter type="Xml" usefile="true" extension=".xml" outputdir="..\..\shippable\testresults" />
+      <test assemblyname="..\build\SecondClass.Tests.dll" appconfig="nunit.config" >
+        <references>
+          <include name="..\build-dependencies\nunit.framework.dll"/>
+        </references>
+      </test>
+    </nunit2>
+  </target>
+
+  <target name="coverage" depends="build">
+    <exec program="..\coverage.cmd" workingdir="..\">
+    </exec>
+  </target>
+</project>
