@@ -1,7 +1,9 @@
 csharp:
   - dotNet40
 build_environment: win2012
-before_install: nant build test coverage -f:.\NUnitSample\NUnitSample.Tests\default.build
+before_install: 
+  - nant build test coverage -f:.\NUnitSample\NUnitSample.Tests\default.build
+  - nant build test coverage -f:.\NUnitSample\SecondClass.Tests\default.build
 language: csharp
 notifications:
   email: false
