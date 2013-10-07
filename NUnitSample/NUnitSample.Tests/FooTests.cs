@@ -22,8 +22,8 @@ namespace NUnitSample.Tests
         public void CanSayGoodbye()
         {
             Foo foo = new Foo();
-            var result = foo.SayGoodbye("Ragesh");
-            Assert.AreEqual("Goodbye, Ragesh", result);
+            var result = foo.SayGoodbye("Goodbye, Avi");
+            Assert.AreEqual("Goodbye, Avi", result);
         }
 
     }
