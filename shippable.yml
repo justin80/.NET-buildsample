@@ -4,12 +4,5 @@ build_environment: win2012
 before_install: nant build test coverage -f:.\NUnitSample\NUnitSample.Tests\default.build
 language: csharp
 notifications:
-  email: false
-  campfire:
-    rooms:
-      - shippable:1796c91e312c6383e6e2a348849881da56bcde00@576506
-    template:
-      - "%{repository} (%{commit}) : %{message}"
-      - "Build details: %{build_url}"
-      
-  
+  email:
+   - avi@shippable.com
